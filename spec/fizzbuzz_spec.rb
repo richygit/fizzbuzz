@@ -1,30 +1,32 @@
+require 'spec_helper'
 require_relative '../fizzbuzz'
 
 RSpec.describe FizzBuzz do
+
   let(:out) { subject.orderedOutput }
 
   it "should print 'fizz' for multiples of 3" do
-    out[3].should == 'fizz'
-    out[6].should == 'fizz'
-    out[63].should == 'fizz'
+    expect(out[3]).to eq 'fizz'
+    expect(out[6]).to eq 'fizz'
+    expect(out[63]).to eq 'fizz'
   end
 
   it "should print 'buzz' for multiples of 5" do
-    out[5].should == 'buzz'
-    out[35].should == 'buzz'
-    out[85].should == 'buzz'
+    expect(out[5]).to eq 'buzz'
+    expect(out[35]).to eq 'buzz'
+    expect(out[85]).to eq 'buzz'
   end
 
   it "should print 'fizzbuzz' for multiples of 3 and 5" do
-    out[15].should == 'fizzbuzz'
-    out[45].should == 'fizzbuzz'
-    out[30].should == 'fizzbuzz'
+    expect(out[15]).to eq 'fizzbuzz'
+    expect(out[45]).to eq 'fizzbuzz'
+    expect(out[30]).to eq 'fizzbuzz'
   end
 
   it "should print the number when it is not a multiple of 3 or 5" do
-    out[1].should == 1
-    out[2].should == 2
-    out[29].should == 29
+    expect(out[1]).to eq '1'
+    expect(out[2]).to eq '2'
+    expect(out[29]).to eq '29'
   end
 end
 
